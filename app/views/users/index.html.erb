@@ -1,0 +1,65 @@
+toute les modifs ici 🎨
+
+<h2>Réalisations</h2>
+<%= link_to "Ajouter 🖌", new_realisation_path %><br>
+<ul>
+  <% @realisations.each do |realisation| %>
+    <li>
+      id : (<%= realisation.id %>)
+      <%= realisation.titre %><%= realisation.date %>
+      <%= realisation.description %>
+      <%= link_to "Modifier 🎨", edit_realisation_path(realisation) %>
+      <%= link_to 'Détruire 💣', realisation_path(realisation), data: { turbo_method: :delete, turbo_confirm: "Supprimer #{realisation.titre}, vraiment ? SUR ?" } %>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Photos</h2>
+<%= link_to "Ajouter 🖌", new_photo_path %><br>
+<ul>
+  <% @photos.each do |photo| %>
+    <li>
+      appartient à la réalisation (id) : <%= photo.realisation_id %>
+      <%= photo.source %>
+      <%= link_to "Modifier 🎨", edit_photo_path(photo) %>
+      <%= link_to 'Détruire 💣', photo_path(photo), data: { turbo_method: :delete, turbo_confirm: "Vraiment ? SUR ?" } %>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Formations</h2>
+<%= link_to "Ajouter 🖌", new_formation_path %><br>
+<ul>
+  <% @formations.each do |formation| %>
+    <li>
+      De : <%= formation.annee_debut %> à : <%= formation.annee_fin %>
+      <%= formation.emploi %> chez <%= formation.organisation %> à <%= formation.ville %>
+      <%= link_to "Modifier 🎨", edit_formation_path(formation) %>
+      <%= link_to 'Détruire 💣', formation_path(formation), data: { turbo_method: :delete, turbo_confirm: "Supprimer #{formation.emploi} (#{formation.organisation}), vraiment ? SUR ?" } %>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Compétence</h2>
+<%= link_to "Ajouter 🖌", new_competence_path %><br>
+<ul>
+  <% @competences.each do |competence| %>
+    <li>
+      <%= competence.competence %> : <%= competence.progression %>%
+      <%= link_to "Modifier 🎨", edit_competence_path(competence) %>
+      <%= link_to 'Détruire 💣', competence_path(competence), data: { turbo_method: :delete, turbo_confirm: "Supprimer #{competence.competence}, vraiment ? SUR ?" } %>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Outils bureautique</h2>
+<%= link_to "Ajouter 🖌", new_bureautique_path %><br>
+<ul>
+  <% @bureautiques.each do |bureautique| %>
+    <li>
+      <%= bureautique.outil %> : <%= bureautique.progression %>%
+      <%= link_to "Modifier 🎨", edit_bureautique_path(bureautique) %>
+      <%= link_to 'Détruire 💣', bureautique_path(bureautique), data: { turbo_method: :delete, turbo_confirm: "Supprimer #{bureautique.outil}, vraiment ? SUR ?" } %>
+    </li>
+  <% end %>
+</ul>

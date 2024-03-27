@@ -1,0 +1,20 @@
+<div class="container mb-5">
+  <%= simple_form_for @anais do |f| %>
+    <%= f.input :prenom %>
+    <%= f.input :nom %>
+    <%= f.input :introduction %>
+    <%= f.input :ambition %>
+    <%= f.input :emploi_voulu %>
+    <%= f.input :email %>
+    <%= f.input :telephone %>
+    <%= f.input :adresse %>
+    <%= f.input :password %>
+    <%= f.input :password_confirmation %>
+    <%#= f.input :current_password,
+            hint: "we need your current password to confirm any changes",
+            required: true %>
+    <div>
+      <%= f.submit "OKay", class: 'btn btn-success' %>
+    </div>
+  <% end %>
+</div>
