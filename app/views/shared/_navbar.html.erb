@@ -1,35 +1,71 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
-          </a>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
+<%# <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button> %>
+<div class="background" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+  <button class="menu__icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</div>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <%# <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5> %>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column gap-4">
+    <div class="border-bottom d-flex flex-column gap-3 border-3">
+      <% if !user_signed_in? %>
+        <%= link_to "connexion", new_user_session_path %>
+      <% else %>
+        <%= link_to "Tes infos !", edit_user_registration_path(current_user) %>
+        <%= link_to "Ajouter/modifier/supprimer", users_path %>
+        <%= link_to "Deconnexion", destroy_user_session_path, data: {turbo_method: :delete}%>
+        <br>
+      <% end %>
     </div>
+    <%= link_to "Mon CV", cv_users_path %>
+    <%= link_to "Mes études", etudes_realisations_path %>
+    <%= link_to "Mes expériences professionnels", experiences_pro_realisations_path %>
+    <%#= link_to "Loisirs", loisirs_users_path %>
+    <%= link_to "Mes contact", contact_users_path %>
+    <%= link_to "Mon profil", root_path %>
   </div>
 </div>
+
+
+<%# <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+
+        <div data-controller="hello">
+          <input type="text">
+          <button>Greet</button>
+        </div> %>
+
+        <%# if user_signed_in? %>
+          <%# <li class="nav-item dropdown">
+            <div class="background">
+              <button class="menu__icon navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> %>
+            <%#= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
+          <%# </a> %>
+            <%# <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> %>
+              <%#= link_to "Action", "#", class: "dropdown-item" %>
+              <%#= link_to "Another action", "#", class: "dropdown-item" %>
+              <%#= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+            <%# </div>
+          </li> %>
+        <%# else %>
+          <%# <li class="nav-item"> %>
+            <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <%# </li> %>
+        <%# end %>
+      <%# </ul>
+    </div>
+  </div>
+</div> %>
