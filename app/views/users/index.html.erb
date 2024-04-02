@@ -53,6 +53,7 @@ toute les modifs ici 🎨
     <li>
       De : <%= experience_pro.annee_debut %> à : <%= experience_pro.annee_fin %>
       <%= experience_pro.emploi %> chez <%= experience_pro.organisation %> à <%= experience_pro.ville %>
+      <%= experience_pro.detail %>
       <%= link_to "Modifier 🎨", edit_formation_path(experience_pro) %>
       <%= link_to 'Détruire 💣', formation_path(experience_pro), data: { turbo_method: :delete, turbo_confirm: "Supprimer #{experience_pro.emploi} (#{experience_pro.organisation}), vraiment ? SUR ?" } %>
     </li>

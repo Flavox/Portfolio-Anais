@@ -3,7 +3,7 @@
   <ul class="d-flex flex-column gap-5 mt-4">
     <% @formations.each do |formation| %>
       <li class="d-flex gap-2 align-items-center">
-        <div class="d-flex flex-column background-green width-55">
+        <div class="d-flex flex-column background-green px-2">
           <p class="mb-0"><%= formation.annee_debut.strftime("%Y") %></p>
           <p class="mb-0"><%= formation.annee_fin.strftime("%Y") %></p>
         </div>
@@ -12,25 +12,28 @@
     <% end %>
   </ul>
 
-  <h1 class="mt-5">expériences</h1>
-  <h2 class="mt-4">Professionelles</h2>
+  <h1 class="mt-5">EXPéRIENCES</h1>
+  <h2 class="fw-bold mt-4">Professionelles</h2>
   <ul class="d-flex flex-column gap-5 mt-3">
     <% @experiences_pro.each do |experience_pro| %>
       <li class="d-flex gap-2 align-items-center">
-        <div class="d-flex flex-column background-green width-55">
+        <div class="d-flex flex-column background-green px-2">
           <p class="mb-0"><%= experience_pro.annee_debut.strftime("%Y") %></p>
           <p class="mb-0"><%= experience_pro.annee_fin.strftime("%Y") %></p>
         </div>
-        <p class="mb-0 fs-5"><%= experience_pro.emploi %> - <%= experience_pro.ville %></p>
+        <div class="d-flex flex-column">
+          <p class="mb-0 fs-5"><%= experience_pro.emploi %> - <%= experience_pro.ville %></p>
+          <p class="mb-0"><%= experience_pro.detail %></p>
+        </div>
       </li>
     <% end %>
   </ul>
 
-  <h2 class="mt-4">Stages</h2>
+  <h2 class="fw-bold mt-4">Stages</h2>
   <ul class="d-flex flex-column gap-5 mt-3">
     <% @stages.each do |stage| %>
       <li class="d-flex gap-2 align-items-center">
-        <div class="d-flex flex-column background-green width-55">
+        <div class="d-flex flex-column background-green px-2">
           <p class="mb-0"><%= stage.annee_debut.strftime("%Y") %></p>
           <p class="mb-0"><%= stage.annee_fin.strftime("%Y") %></p>
         </div>

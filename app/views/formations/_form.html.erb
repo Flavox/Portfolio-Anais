@@ -5,6 +5,7 @@
     <%= f.input :emploi %>
     <%= f.input :organisation %>
     <%= f.input :ville %>
+    <%= f.input :detail %>
     <%= f.input :experience, collection: ['experience pro', 'stage', 'formation'], prompt: "Choisis le type d'experience" %>
     <div>
       <%= f.submit "OKay", class: 'btn btn-success' %>
