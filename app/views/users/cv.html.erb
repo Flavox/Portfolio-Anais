@@ -38,4 +38,16 @@
       </li>
     <% end %>
   </ul>
+
+  <h1 class='mt-5'>Compétences</h1>
+  <ul class='d-flex justify-content-evenly align-items-end row row-cols-3 ps-0 mt-3'>
+    <% @competences.each do |competence| %>
+      <li class='d-flex flex-column col mt-3'>
+        <p><%= competence.competence %></p>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped" role="progressbar" aria-label="Default striped example" style='width: <%= competence.progression%>%' aria-valuenow="<%= competence.progression%>" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
 </div>
