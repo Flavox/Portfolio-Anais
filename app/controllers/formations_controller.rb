@@ -37,6 +37,6 @@ class FormationsController < ApplicationController
   end
 
   def formation_params
-    params.require(:formation).permit(:annee_debut, :annee_fin, :emploi, :organisation, :ville, :experience)
+    params.require(:formation).permit(:annee_debut, :annee_fin, :emploi, :organisation, :ville, :detail, :experience)
   end
 end
