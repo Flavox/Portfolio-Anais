@@ -5,9 +5,12 @@ class UsersController < ApplicationController
   def index
     @realisations = Realisation.all
     @photos = Photo.all
-    @formations = Formation.all
     @competences = Competence.all
     @bureautiques = Bureautique.all
+    @formations_sans_type = Formation.where(experience: '')
+    @formations = Formation.where(experience: 'formation')
+    @stages = Formation.where(experience: 'stage')
+    @experiences_pro = Formation.where(experience: 'experience pro')
   end
 
   def home
@@ -15,9 +18,11 @@ class UsersController < ApplicationController
   end
 
   def cv
-    @formations = Formation.all
     @competences = Competence.all
     @bureautiques = Bureautique.all
+    @formations = Formation.where(experience: 'formation')
+    @stages = Formation.where(experience: 'stage')
+    @experiences_pro = Formation.where(experience: 'experience pro')
   end
 
   # def loisirs

@@ -1,0 +1,17 @@
+<div class="mt-3">
+  <h1>FORMATION</h1>
+  <ul class="d-flex flex-column gap-5 mt-5">
+    <% @formations.each do |formation| %>
+      <li class="d-flex gap-2 align-items-center">
+        <div class="d-flex flex-column background-green width-55">
+          <p class="mb-0"><%= formation.annee_debut.strftime("%Y") %></p>
+          <p class="mb-0"><%= formation.annee_fin.strftime("%Y") %></p>
+        </div>
+        <p class="mb-0 fs-4"><%= formation.emploi %> - <%= formation.ville %></p>
+      </li>
+    <% end %>
+  </ul>
+
+  <h1>expériences</h1>
+  
+</div>
