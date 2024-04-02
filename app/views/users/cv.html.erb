@@ -7,7 +7,7 @@
           <p class="mb-0"><%= formation.annee_debut.strftime("%Y") %></p>
           <p class="mb-0"><%= formation.annee_fin.strftime("%Y") %></p>
         </div>
-        <p class="mb-0 fs-4"><%= formation.emploi %> - <%= formation.ville %></p>
+        <p class="mb-0 fs-5"><%= formation.emploi %> - <%= formation.ville %></p>
       </li>
     <% end %>
   </ul>
@@ -21,7 +21,7 @@
           <p class="mb-0"><%= experience_pro.annee_debut.strftime("%Y") %></p>
           <p class="mb-0"><%= experience_pro.annee_fin.strftime("%Y") %></p>
         </div>
-        <p class="mb-0 fs-4"><%= experience_pro.emploi %> - <%= experience_pro.ville %></p>
+        <p class="mb-0 fs-5"><%= experience_pro.emploi %> - <%= experience_pro.ville %></p>
       </li>
     <% end %>
   </ul>
@@ -34,7 +34,7 @@
           <p class="mb-0"><%= stage.annee_debut.strftime("%Y") %></p>
           <p class="mb-0"><%= stage.annee_fin.strftime("%Y") %></p>
         </div>
-        <p class="mb-0 fs-4"><%= stage.emploi %> - <%= stage.ville %></p>
+        <p class="mb-0 fs-5"><%= stage.emploi %> - <%= stage.ville %></p>
       </li>
     <% end %>
   </ul>
@@ -42,12 +42,23 @@
   <h1 class='mt-5'>Compétences</h1>
   <ul class='d-flex justify-content-evenly align-items-end row row-cols-3 ps-0 mt-3'>
     <% @competences.each do |competence| %>
-      <li class='d-flex flex-column col mt-3'>
-        <p><%= competence.competence %></p>
+      <li class='d-flex flex-column col mb-4'>
+        <p class='fs-5'><%= competence.competence %></p>
         <div class="progress">
           <div class="progress-bar progress-bar-striped" role="progressbar" aria-label="Default striped example" style='width: <%= competence.progression%>%' aria-valuenow="<%= competence.progression%>" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
       </li>
     <% end %>
   </ul>
+
+  <h1>Outils bureautiques</h1>
+  <ul class='d-flex flex-column ps-0 mt-3'>
+  <% @bureautiques.each do |bureautique| %>
+    <li class='d-flex flex-column mt-3'>
+      <p class='fs-5'><%= bureautique.outil %></p>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped" role="progressbar" aria-label="Default striped example" style='width: <%= bureautique.progression%>%' aria-valuenow="<%= bureautique.progression%>" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </li>
+  <% end %>
 </div>
