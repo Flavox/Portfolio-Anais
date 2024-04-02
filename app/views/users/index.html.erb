@@ -30,12 +30,40 @@ toute les modifs ici 🎨
 <h2>Formations</h2>
 <%= link_to "Ajouter 🖌", new_formation_path %><br>
 <ul>
+  <h5>Formations : </h5>
   <% @formations.each do |formation| %>
     <li>
       De : <%= formation.annee_debut %> à : <%= formation.annee_fin %>
       <%= formation.emploi %> chez <%= formation.organisation %> à <%= formation.ville %>
       <%= link_to "Modifier 🎨", edit_formation_path(formation) %>
       <%= link_to 'Détruire 💣', formation_path(formation), data: { turbo_method: :delete, turbo_confirm: "Supprimer #{formation.emploi} (#{formation.organisation}), vraiment ? SUR ?" } %>
+    </li>
+  <% end %>
+  <h5>Stages :</h5>
+  <% @stages.each do |stage| %>
+    <li>
+      De : <%= stage.annee_debut %> à : <%= stage.annee_fin %>
+      <%= stage.emploi %> chez <%= stage.organisation %> à <%= stage.ville %>
+      <%= link_to "Modifier 🎨", edit_formation_path(stage) %>
+      <%= link_to 'Détruire 💣', formation_path(stage), data: { turbo_method: :delete, turbo_confirm: "Supprimer #{stage.emploi} (#{stage.organisation}), vraiment ? SUR ?" } %>
+    </li>
+  <% end %>
+  <h5>Experiences pro :</h5>
+    <% @experiences_pro.each do |experience_pro| %>
+    <li>
+      De : <%= experience_pro.annee_debut %> à : <%= experience_pro.annee_fin %>
+      <%= experience_pro.emploi %> chez <%= experience_pro.organisation %> à <%= experience_pro.ville %>
+      <%= link_to "Modifier 🎨", edit_formation_path(experience_pro) %>
+      <%= link_to 'Détruire 💣', formation_path(experience_pro), data: { turbo_method: :delete, turbo_confirm: "Supprimer #{experience_pro.emploi} (#{experience_pro.organisation}), vraiment ? SUR ?" } %>
+    </li>
+  <% end %>
+  <h5>Les oublies (sans type défini) :</h5>
+      <% @formations_sans_type.each do |oublie| %>
+    <li>
+      De : <%= oublie.annee_debut %> à : <%= oublie.annee_fin %>
+      <%= oublie.emploi %> chez <%= oublie.organisation %> à <%= oublie.ville %>
+      <%= link_to "Modifier 🎨", edit_formation_path(oublie) %>
+      <%= link_to 'Détruire 💣', formation_path(oublie), data: { turbo_method: :delete, turbo_confirm: "Supprimer #{oublie.emploi} (#{oublie.organisation}), vraiment ? SUR ?" } %>
     </li>
   <% end %>
 </ul>
