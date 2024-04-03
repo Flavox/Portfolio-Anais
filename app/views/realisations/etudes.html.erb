@@ -4,18 +4,18 @@
     <h2 class="mt-4"><%= real_etud.titre %></h2>
     <p><%= real_etud.description %></p>
     <% if real_etud.photos.present? %>
-      <div id="carouselExampleFade" class="carousel carousel-dark slide" data-bs-ride="carousel">
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+      <div id="carousel<%=real_etud.id%>" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel<%=real_etud.id%>" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel<%=real_etud.id%>" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
         <div class="carousel-indicators">
           <% real_etud.photos.each_with_index do |photo, index| %>
-            <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to='<%= index %>' class="<%= 'active' if index.zero? %>" aria-current="<%= 'true' if index.zero? %>" aria-label='Photo n°<%=index + 1%>'></button>
+            <button type="button" data-bs-target="#carousel<%=real_etud.id%>" data-bs-slide-to='<%= index %>' class="<%= 'active' if index.zero? %>" aria-current="<%= 'true' if index.zero? %>" aria-label='Photo n°<%=index + 1%>'></button>
           <% end %>
         </div>
         <div class="carousel-inner">
