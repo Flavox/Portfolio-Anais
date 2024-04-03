@@ -30,12 +30,10 @@ class RealisationsController < ApplicationController
 
   def etudes
     @realisations_etude = Realisation.where(categorie: 'etude')
-    # @photos = Photo.where(realisation_id: @realisation.id)
   end
 
   def experiences_pro
     @realisations_pro = Realisation.where(categorie: 'experience pro')
-    @photos = Photo.all
   end
 
 
