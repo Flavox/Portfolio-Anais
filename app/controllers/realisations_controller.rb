@@ -29,12 +29,12 @@ class RealisationsController < ApplicationController
   end
 
   def etudes
-    @realisations = Realisation.all
-    @photos = Photo.all
+    @realisations_etude = Realisation.where(categorie: 'etude')
+    # @photos = Photo.where(realisation_id: @realisation.id)
   end
 
   def experiences_pro
-    @realisations = Realisation.all
+    @realisations_pro = Realisation.where(categorie: 'experience pro')
     @photos = Photo.all
   end
 
@@ -47,6 +47,6 @@ class RealisationsController < ApplicationController
   end
 
   def realisation_params
-    params.require(:realisation).permit(:titre, :description, :date)
+    params.require(:realisation).permit(:titre, :description, :date, :categorie)
   end
 end

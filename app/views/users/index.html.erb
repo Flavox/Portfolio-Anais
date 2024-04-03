@@ -6,6 +6,7 @@ toute les modifs ici 🎨
   <% @realisations.each do |realisation| %>
     <li>
       id : (<%= realisation.id %>)
+      <%= realisation.categorie %>
       <%= realisation.titre %><%= realisation.date %>
       <%= realisation.description %>
       <%= link_to "Modifier 🎨", edit_realisation_path(realisation) %>
@@ -19,7 +20,7 @@ toute les modifs ici 🎨
 <ul>
   <% @photos.each do |photo| %>
     <li>
-      appartient à la réalisation (id) : <%= photo.realisation_id %>
+      appartient à la réalisation : <%= photo.realisation.titre %>
       <%= photo.source %>
       <%= link_to "Modifier 🎨", edit_photo_path(photo) %>
       <%= link_to 'Détruire 💣', photo_path(photo), data: { turbo_method: :delete, turbo_confirm: "Vraiment ? SUR ?" } %>
