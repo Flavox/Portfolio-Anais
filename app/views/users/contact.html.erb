@@ -1,0 +1,30 @@
+<div class="mt-3">
+  <h1>Contact</h1>
+  <div class="d-flex ms-5 align-items-baseline fs-4 gap-3 mt-5">
+    <div class="background-green px-3 py-1">
+      <i class="fa-solid fa-phone-volume icone-white"></i>
+    </div>
+<%= link_to @anais.telephone, "tel:#{@anais.telephone}" %>
+  </div>
+
+  <div class="d-flex ms-5 align-items-baseline fs-4 gap-3 mt-5">
+    <div class="background-green px-3 py-1">
+      <i class="fa-solid fa-at icone-white"></i>
+    </div>
+    <%= link_to @anais.email, "mailto:#{@anais.email}" %>
+  </div>
+
+  <div class="d-flex ms-5 align-items-center fs-4 gap-3 mt-5">
+    <div class="background-green px-3 py-1">
+      <i class="fa-solid fa-location-dot icone-white"></i>
+    </div>
+<%= link_to @anais.adresse, "https://www.google.com/maps/search/?api=1&query=#{CGI.escape(@anais.adresse)}", target: "_blank" %>
+  </div>
+
+  <div class="d-flex ms-5 align-items-baseline fs-4 gap-3 mt-5">
+    <div class="background-green px-3 py-1">
+      <i class="fa-solid fa-car-rear icone-white"></i>
+    </div>
+    <p>Permis B</p>
+  </div>
+</div>
