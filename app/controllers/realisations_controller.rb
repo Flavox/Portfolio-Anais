@@ -45,6 +45,6 @@ class RealisationsController < ApplicationController
   end
 
   def realisation_params
-    params.require(:realisation).permit(:titre, :description, :date, :categorie)
+    params.require(:realisation).permit(:titre, :description, :date, :categorie, photos: [])
   end
 end
