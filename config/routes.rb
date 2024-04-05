@@ -18,7 +18,6 @@ Rails.application.routes.draw do
     get 'etudes', on: :collection
     get 'experiences_pro', on: :collection
   end
-  resources :photos, only: %i[new create edit update destroy]
   resources :formations, only: %i[new create edit update destroy]
   resources :competences, only: %i[new create edit update destroy]
   resources :bureautiques, only: %i[new create edit update destroy]

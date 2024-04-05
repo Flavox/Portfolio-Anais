@@ -15,19 +15,6 @@ toute les modifs ici 🎨
   <% end %>
 </ul>
 
-<h2>Photos</h2>
-<%= link_to "Ajouter 🖌", new_photo_path %><br>
-<ul>
-  <% @photos.each do |photo| %>
-    <li>
-      appartient à la réalisation : <%= photo.realisation.titre %>
-      <%= photo.source %>
-      <%= link_to "Modifier 🎨", edit_photo_path(photo) %>
-      <%= link_to 'Détruire 💣', photo_path(photo), data: { turbo_method: :delete, turbo_confirm: "Vraiment ? SUR ?" } %>
-    </li>
-  <% end %>
-</ul>
-
 <h2>Formations</h2>
 <%= link_to "Ajouter 🖌", new_formation_path %><br>
 <ul>

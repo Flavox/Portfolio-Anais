@@ -4,7 +4,6 @@ class UsersController < ApplicationController
 
   def index
     @realisations = Realisation.all
-    @photos = Photo.all
     @competences = Competence.all
     @bureautiques = Bureautique.all
     @formations_sans_type = Formation.where(experience: '')
