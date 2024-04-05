@@ -74,14 +74,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_05_090133) do
     t.index ["user_id"], name: "index_formations_on_user_id"
   end
 
-  create_table "photos", force: :cascade do |t|
-    t.string "source"
-    t.bigint "realisation_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["realisation_id"], name: "index_photos_on_realisation_id"
-  end
-
   create_table "realisations", force: :cascade do |t|
     t.string "titre"
     t.text "description"
@@ -117,6 +109,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_05_090133) do
   add_foreign_key "bureautiques", "users"
   add_foreign_key "competences", "users"
   add_foreign_key "formations", "users"
-  add_foreign_key "photos", "realisations"
   add_foreign_key "realisations", "users"
 end
