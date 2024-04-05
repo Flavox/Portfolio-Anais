@@ -1,5 +1,6 @@
 class RealisationsController < ApplicationController
   before_action :set_realisation, only: %i[edit update destroy]
+  after_action :create_image_directory, only: [:create]
 
   def new
     @realisation = Realisation.new
@@ -46,5 +47,10 @@ class RealisationsController < ApplicationController
 
   def realisation_params
     params.require(:realisation).permit(:titre, :description, :date, :categorie)
+  end
+
+  def create_image_directory
+    path = Rails.root.join('app', 'assets', 'images', @realisation.titre.parameterize)
+    FileUtils.mkdir_p(path) unless File.directory?(path)
   end
 end
