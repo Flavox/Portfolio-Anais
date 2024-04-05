@@ -3,10 +3,10 @@
   <% @realisations_pro.each do |real_pro| %>
     <h2 class="mt-4"><%= real_pro.titre %></h2>
     <p><%= real_pro.description %></p>
-    <% if real_pro.photos.present? %>
+    <% if real_pro.photos.attached? %>
       <% real_pro.photos.each_with_index do |photo, index| %>
         <div class="mt-3" data-aos="fade-in" data-aos-duration = "900" data-aos-easing= "ease-in-sine">
-          <%= image_tag photo.source, alt: "Photo n° #{index + 1}", class: "d-block w-100" %>
+          <%= cl_image_tag photo.key, alt: "Photo n° #{index + 1}", class: "d-block w-100" %>
         </div>
       <% end %>
     <% end %>

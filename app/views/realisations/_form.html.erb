@@ -1,9 +1,10 @@
 <div class="container">
   <%= simple_form_for @realisation do |f| %>
+    <%= f.input :categorie, collection: ['experience pro', 'etude'], prompt: "Choisis le type d'experience" %>
     <%= f.input :titre %>
     <%= f.input :description %>
     <%= f.input :date %>
-    <%= f.input :categorie, collection: ['experience pro', 'etude'], prompt: "Choisis le type d'experience" %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <div>
       <%= f.submit "OKay", class: 'btn btn-success' %>
     </div>
