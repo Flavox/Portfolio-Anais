@@ -3,7 +3,7 @@
     <%= f.input :categorie, collection: ['experience pro', 'etude'], prompt: "Choisis le type d'experience" %>
     <%= f.input :titre %>
     <%= f.input :description %>
-    <%= f.input :date %>
+    <%= f.input :date, as: :string, input_html: { data: { controller: "datepicker" } } %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <div>
       <%= f.submit "OKay", class: 'btn btn-success' %>
