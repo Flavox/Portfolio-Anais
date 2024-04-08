@@ -1,15 +1,12 @@
-<div class="background" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-  <button class="menu__icon">
+<div class="background" data-controller="navbar-button" data-navbar-button-target="button" data-action="click->navbar-button#animate" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+  <button class="menu__icon" data-navbar-button-target="menuIcon">
     <span></span>
     <span></span>
     <span></span>
   </button>
 </div>
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-  <div class="offcanvas-header">
-    <button type="button" data-bs-dismiss="offcanvas" aria-label="Close"><%= image_tag "arrow-right-32.png" %></button>
-  </div>
-  <div class="offcanvas-body d-flex flex-column gap-4">
+  <div class="offcanvas-body d-flex flex-column gap-5 mt-5">
     <div class="border-bottom d-flex flex-column gap-3 border-3">
       <% if !user_signed_in? %>
         <%= link_to "connexion", new_user_session_path %>
