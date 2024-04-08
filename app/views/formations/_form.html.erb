@@ -1,7 +1,7 @@
 <div class="container">
   <%= simple_form_for @formation do |f| %>
-    <%= f.input :annee_debut, as: :date %>
-    <%= f.input :annee_fin, as: :date %>
+    <%= f.input :annee_debut, as: :string, input_html: { data: { controller: "datepicker" } } %>
+    <%= f.input :annee_fin, as: :string, input_html: { data: { controller: "datepicker" } } %>
     <%= f.input :emploi %>
     <%= f.input :organisation %>
     <%= f.input :ville %>

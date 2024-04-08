@@ -3,6 +3,7 @@
   <head>
     <title>PortfolioAnais</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -16,6 +17,7 @@
       <%= yield %>
     </div>
     <%= render "shared/flashes" %>
+    <%# <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> %>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init();

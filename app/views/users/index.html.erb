@@ -1,79 +1,90 @@
-toute les modifs ici 🎨
+<h1>toutes les modifs ici 🎨</h1>
 
-<h2>Réalisations</h2>
+<h2 class="mt-3">Réalisations</h2>
 <%= link_to "Ajouter 🖌", new_realisation_path %><br>
 <ul>
   <% @realisations.each do |realisation| %>
-    <li>
-      id : (<%= realisation.id %>)
-      <%= realisation.categorie %>
-      <%= realisation.titre %><%= realisation.date %>
+    <li class="mb-3 text-info">
+      (<%= realisation.categorie %>)
+      <%= realisation.titre %> <%= realisation.date.strftime("%Y") %>
       <%= realisation.description %>
-      <%= link_to "Modifier 🎨", edit_realisation_path(realisation) %>
-      <%= link_to 'Détruire 💣', realisation_path(realisation), data: { turbo_method: :delete, turbo_confirm: "Supprimer #{realisation.titre}, vraiment ? SUR ?" } %>
+      <div class="d-flex justify-content-evenly">
+        <%= link_to "Modifier 🎨", edit_realisation_path(realisation) %>
+        <%= link_to 'Détruire 💣', realisation_path(realisation), data: { turbo_method: :delete, turbo_confirm: "Supprimer #{realisation.titre}, vraiment ? SUR ?" } %>
+      </div>
     </li>
   <% end %>
 </ul>
 
-<h2>Formations</h2>
+<h2 class="mt-5">Formations</h2>
 <%= link_to "Ajouter 🖌", new_formation_path %><br>
 <ul>
   <h5>Formations : </h5>
   <% @formations.each do |formation| %>
-    <li>
-      De : <%= formation.annee_debut %> à : <%= formation.annee_fin %>
+    <li class="mb-3 text-info">
+      <%= formation.annee_debut.strftime("%Y")  %> - <%= formation.annee_fin.strftime("%Y")  %>
       <%= formation.emploi %> chez <%= formation.organisation %> à <%= formation.ville %>
-      <%= link_to "Modifier 🎨", edit_formation_path(formation) %>
-      <%= link_to 'Détruire 💣', formation_path(formation), data: { turbo_method: :delete, turbo_confirm: "Supprimer #{formation.emploi} (#{formation.organisation}), vraiment ? SUR ?" } %>
+      <div class="d-flex justify-content-evenly">
+        <%= link_to "Modifier 🎨", edit_formation_path(formation) %>
+        <%= link_to 'Détruire 💣', formation_path(formation), data: { turbo_method: :delete, turbo_confirm: "Supprimer #{formation.emploi} (#{formation.organisation}), vraiment ? SUR ?" } %>
+      </div>
     </li>
   <% end %>
-  <h5>Stages :</h5>
+  <h5 class="mt-5">Stages :</h5>
   <% @stages.each do |stage| %>
-    <li>
-      De : <%= stage.annee_debut %> à : <%= stage.annee_fin %>
+    <li class="mb-3 text-info">
+      <%= stage.annee_debut.strftime("%Y")  %> - <%= stage.annee_fin.strftime("%Y")  %>
       <%= stage.emploi %> chez <%= stage.organisation %> à <%= stage.ville %>
-      <%= link_to "Modifier 🎨", edit_formation_path(stage) %>
-      <%= link_to 'Détruire 💣', formation_path(stage), data: { turbo_method: :delete, turbo_confirm: "Supprimer #{stage.emploi} (#{stage.organisation}), vraiment ? SUR ?" } %>
+      <div class="d-flex justify-content-evenly">
+        <%= link_to "Modifier 🎨", edit_formation_path(stage) %>
+        <%= link_to 'Détruire 💣', formation_path(stage), data: { turbo_method: :delete, turbo_confirm: "Supprimer #{stage.emploi} (#{stage.organisation}), vraiment ? SUR ?" } %>
+      </div>
     </li>
   <% end %>
-  <h5>Experiences pro :</h5>
+  <h5 class="mt-5">Experiences pro :</h5>
     <% @experiences_pro.each do |experience_pro| %>
-    <li>
-      De : <%= experience_pro.annee_debut %> à : <%= experience_pro.annee_fin %>
+    <li class="mb-3 text-info">
+      <%= experience_pro.annee_debut.strftime("%Y")  %> - <%= experience_pro.annee_fin.strftime("%Y")  %>
       <%= experience_pro.emploi %> chez <%= experience_pro.organisation %> à <%= experience_pro.ville %>
       <%= experience_pro.detail %>
-      <%= link_to "Modifier 🎨", edit_formation_path(experience_pro) %>
-      <%= link_to 'Détruire 💣', formation_path(experience_pro), data: { turbo_method: :delete, turbo_confirm: "Supprimer #{experience_pro.emploi} (#{experience_pro.organisation}), vraiment ? SUR ?" } %>
+      <div class="d-flex justify-content-evenly">
+        <%= link_to "Modifier 🎨", edit_formation_path(experience_pro) %>
+        <%= link_to 'Détruire 💣', formation_path(experience_pro), data: { turbo_method: :delete, turbo_confirm: "Supprimer #{experience_pro.emploi} (#{experience_pro.organisation}), vraiment ? SUR ?" } %>
+      </div>
     </li>
   <% end %>
-  <h5>Les oublies (sans type défini) :</h5>
+  <h5 class="mt-5">Les oublies (sans type défini) :</h5>
       <% @formations_sans_type.each do |oublie| %>
-    <li>
-      De : <%= oublie.annee_debut %> à : <%= oublie.annee_fin %>
+    <li class="mb-3 text-info">
+      <%= oublie.annee_debut.strftime("%Y")  %> - <%= oublie.annee_fin.strftime("%Y")  %>
       <%= oublie.emploi %> chez <%= oublie.organisation %> à <%= oublie.ville %>
-      <%= link_to "Modifier 🎨", edit_formation_path(oublie) %>
-      <%= link_to 'Détruire 💣', formation_path(oublie), data: { turbo_method: :delete, turbo_confirm: "Supprimer #{oublie.emploi} (#{oublie.organisation}), vraiment ? SUR ?" } %>
+      <div class="d-flex justify-content-evenly">
+        <%= link_to "Modifier 🎨", edit_formation_path(oublie) %>
+        <%= link_to 'Détruire 💣', formation_path(oublie), data: { turbo_method: :delete, turbo_confirm: "Supprimer #{oublie.emploi} (#{oublie.organisation}), vraiment ? SUR ?" } %>
+      </div>
     </li>
   <% end %>
 </ul>
 
-<h2>Compétence</h2>
+<h2 class="mt-5">Compétence</h2>
 <%= link_to "Ajouter 🖌", new_competence_path %><br>
 <ul>
   <% @competences.each do |competence| %>
-    <li>
+    <li class="mt-2 text-info">
       <%= competence.competence %> : <%= competence.progression %>%
-      <%= link_to "Modifier 🎨", edit_competence_path(competence) %>
-      <%= link_to 'Détruire 💣', competence_path(competence), data: { turbo_method: :delete, turbo_confirm: "Supprimer #{competence.competence}, vraiment ? SUR ?" } %>
+      <div class="d-flex justify-content-evenly">
+        <%= link_to "Modifier 🎨", edit_competence_path(competence) %>
+        <%= link_to 'Détruire 💣', competence_path(competence), data: { turbo_method: :delete, turbo_confirm: "Supprimer #{competence.competence}, vraiment ? SUR ?" } %>
+      </div>
     </li>
   <% end %>
 </ul>
 
-<h2>Outils bureautique</h2>
+<h2 class="mt-5">Outils bureautique</h2>
 <%= link_to "Ajouter 🖌", new_bureautique_path %><br>
 <ul>
   <% @bureautiques.each do |bureautique| %>
-    <li>
+    <li class="mt-2 text-info">
       <%= bureautique.outil %> : <%= bureautique.progression %>%
       <%= link_to "Modifier 🎨", edit_bureautique_path(bureautique) %>
       <%= link_to 'Détruire 💣', bureautique_path(bureautique), data: { turbo_method: :delete, turbo_confirm: "Supprimer #{bureautique.outil}, vraiment ? SUR ?" } %>
