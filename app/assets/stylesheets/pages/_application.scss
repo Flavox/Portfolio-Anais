@@ -2,11 +2,19 @@ body {
   background-color: #454545;
 }
 
-h1, h2, h3, h5, p {
+h1, h2 {
+  font-family: "Playfair Display", serif;
+}
+
+p {
+  font-family: "Raleway", sans-serif;
+}
+a {
+  font-family: "Raleway", sans-serif;
+  text-decoration: none;
   color: white;
 }
 
-a {
-  text-decoration: none;
+h1, h2, h3, h5, p {
   color: white;
 }
