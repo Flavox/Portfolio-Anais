@@ -19,9 +19,9 @@ class UsersController < ApplicationController
   def cv
     @competences = Competence.all
     @bureautiques = Bureautique.all
-    @formations = Formation.where(experience: 'formation')
-    @stages = Formation.where(experience: 'stage')
-    @experiences_pro = Formation.where(experience: 'experience pro')
+    @formations = Formation.where(experience: 'formation').order(annee_fin: :desc)
+    @stages = Formation.where(experience: 'stage').order(annee_fin: :desc)
+    @experiences_pro = Formation.where(experience: 'experience pro').order(annee_fin: :desc)
   end
 
   # def loisirs

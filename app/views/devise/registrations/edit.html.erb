@@ -1,4 +1,4 @@
-<h2>Regarde et change tes infos si besoin <%= resource_name.to_s.humanize %></h2>
+<h2>Regarde et change tes infos si besoin</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
@@ -30,10 +30,12 @@
     <%= f.input :password_confirmation,
                 required: false,
                 input_html: { autocomplete: "nouveau mot de passe" } %>
-    <%= f.input :current_password,
-                hint: "Obligé de mettre ton mot de passe actuelle pour valider les changements",
-                required: true,
-                input_html: { autocomplete: "mot de passe actuelle" } %>
+    <div class="text-danger">
+      <%= f.input :current_password,
+                  hint: "<span class='text-danger'>Obligé de mettre ton mot de passe actuelle pour valider les changements</span>".html_safe,                  required: true,
+                  input_html: { autocomplete: "mot de passe actuelle" },
+                  hint_class: 'text-danger' %>
+    </div>
   </div>
 
   <div class="form-actions">
