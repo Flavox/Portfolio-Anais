@@ -47,8 +47,10 @@
     <% @competences.each do |competence| %>
       <li class='d-flex flex-column col mb-4'>
         <p class='fs-5'><%= competence.competence %></p>
-        <div class="progress">
-          <div class="progress-bar progress-bar-striped" role="progressbar" aria-label="Default striped example" style='width: <%= competence.progression%>%' aria-valuenow="<%= competence.progression%>" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress" >
+          <div class="progress-bar progress-bar-striped progress-bar-animated custom" data-controller="animated-progress" role="progressbar" aria-label="Competence progress" aria-valuenow="<%= competence.progression%>" aria-valuemin="0" aria-valuemax="100" data-progress="<%= competence.progression %>">
+            <span class="sr-only">Progression: <%= competence.progression %>%</span>
+          </div>
         </div>
       </li>
     <% end %>
@@ -60,8 +62,11 @@
     <li class='d-flex flex-column mt-3'>
       <p class='fs-5'><%= bureautique.outil %></p>
       <div class="progress">
-        <div class="progress-bar progress-bar-striped" role="progressbar" aria-label="Default striped example" style='width: <%= bureautique.progression%>%' aria-valuenow="<%= bureautique.progression%>" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress-bar progress-bar-striped progress-bar-animated custom" data-controller="animated-progress" role="progressbar" aria-label="Bureautique progress" aria-valuenow="<%= bureautique.progression%>" aria-valuemin="0" aria-valuemax="100" data-progress="<%= bureautique.progression %>">
+          <span class="sr-only">Progression: <%= bureautique.progression %>%</span>
+        </div>
       </div>
     </li>
   <% end %>
+  </ul>
 </div>
