@@ -6,8 +6,8 @@
   </button>
 </div>
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-  <div class="offcanvas-body d-flex flex-column gap-5 mt-5">
-    <div class="border-bottom d-flex flex-column gap-3 border-3">
+  <div class="offcanvas-body text-end d-flex flex-column gap-5 mt-5">
+    <div class="border-bottom d-flex flex-column gap-3 border-3 mt-4">
       <% if !user_signed_in? %>
         <%= link_to "connexion", new_user_session_path %>
       <% else %>

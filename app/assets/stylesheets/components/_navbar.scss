@@ -74,6 +74,9 @@ button {
 
 .offcanvas {
   background-color: #92d050;
+  height: 500px;
+  border-radius: 25% 0px 0px 300%;
+  box-shadow: 0px 15px #696969;
 
   & a {
     text-decoration: none;
