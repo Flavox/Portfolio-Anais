@@ -1,15 +1,19 @@
-<div class="my-3">
-  <h1><%= @anais.prenom %> <%= @anais.nom %></h1>
-  <h2><%= @anais.emploi_voulu %></h2>
-  <div class="image-container mt-5">
-    <%= image_tag "avatar.jpg" %>
+<div class="d-md-flex flex-wrap my-3">
+  <div class="d-md-flex mx-auto">
+    <div class="h-25">
+      <h1><%= @anais.prenom %> <%= @anais.nom %></h1>
+      <h2><%= @anais.emploi_voulu %></h2>
+    </div>
+    <div class="image-container mt-5">
+      <%= image_tag "avatar.jpg" %>
+    </div>
   </div>
-</div>
-<div class="text-start mt-5">
-  <h1>Qui suis-je ?</h1>
-  <p><%= @anais.introduction %></p>
-</div>
-<div class="text-end mt-5">
-  <h1>Mes ambitions</h1>
-  <p><%= @anais.ambition %></p>
+  <div class="text-start d-md-flex flex-column width-50 mt-5">
+    <h1>Qui suis-je ?</h1>
+    <p><%= @anais.introduction %></p>
+  </div>
+  <div class="text-end mt-5">
+    <h1>Mes ambitions</h1>
+    <p><%= @anais.ambition %></p>
+  </div>
 </div>
