@@ -5,7 +5,7 @@
     <p><%= real_pro.description %></p>
     <% if real_pro.photos.attached? %>
       <% real_pro.photos.each_with_index do |photo, index| %>
-        <div class="mt-3" data-aos="fade-in" data-aos-duration="1200" data-aos-easing="ease-in-sine" data-aos-offset="250">
+        <div class="mt-3" data-aos="fade" data-aos-duration="1200" data-aos-easing="ease-in-sine" data-aos-offset="250">
           <%= cl_image_tag photo.key, alt: "Photo n° #{index + 1}", class: "d-block w-100" %>
         </div>
       <% end %>
