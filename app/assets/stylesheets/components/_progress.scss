@@ -4,4 +4,10 @@
 
 .progress-bar {
   background-color: #92d050;
+  transition: width 1s ease-in-out; // Animation de transition pour la mise à jour de la largeur
+
+  // Définir la largeur de la barre de progression en fonction de la progression
+  &.custom {
+    width: 0%; // Par défaut, la largeur est de 0%
+  }
 }
