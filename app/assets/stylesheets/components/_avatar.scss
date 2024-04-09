@@ -1,15 +1,15 @@
 .image-container {
-  display:block;
   position:relative;
 }
 
 .image-container img {
   width: 100%;
-  border-radius: 50%
+  max-width: 345px;
+  border-radius: 50%;
 }
 
 .image-container::before {
-  display:block;
+  max-width: 345px;
   content:'';
   position:absolute;
   width:100%;
@@ -17,5 +17,5 @@
   -moz-box-shadow:inset 0px 0px 12px 15px #454545;
   -webkit-box-shadow:inset 0px 0px 12px 15px #454545;
   box-shadow:inset 0px 0px 12px 15px #454545;
-  border-radius: 48%
+  border-radius: 48%;
 }
