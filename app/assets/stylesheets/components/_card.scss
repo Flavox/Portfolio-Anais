@@ -1,0 +1,18 @@
+.big-card {
+  background-color: #dedede;
+  border-radius: 20px;
+  box-shadow: 20px 20px 60px;
+}
+
+.top-card {
+  background-color: #696969;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.content-card {
+  color: black;
+
+  & p {
+    color: black;
+  }
+}

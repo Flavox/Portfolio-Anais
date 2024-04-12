@@ -1,46 +1,61 @@
 <div class="my-3">
-  <h1>FORMATIONS</h1>
-  <ul class="d-flex flex-column gap-5 mt-4 ps-2">
-    <% @formations.each do |formation| %>
-      <li class="d-flex gap-2 align-items-center">
-        <div class="d-flex flex-column background-green px-2">
-          <p class="mb-0"><%= formation.annee_debut.strftime("%Y") %></p>
-          <p class="mb-0"><%= formation.annee_fin.strftime("%Y") %></p>
-        </div>
-        <p class="mb-0 fs-5"><%= formation.emploi %> - <%= formation.ville %></p>
-      </li>
-    <% end %>
-  </ul>
+  <h1 class="mt-5">Expériences</h1>
 
-  <h1 class="mt-5">EXPéRIENCES</h1>
-  <h2 class="fw-bold mt-4">Professionelles</h2>
-  <ul class="d-flex flex-column gap-5 mt-3 ps-2">
-    <% @experiences_pro.each do |experience_pro| %>
-      <li class="d-flex gap-2 align-items-center">
-        <div class="d-flex flex-column background-green px-2">
-          <p class="mb-0"><%= experience_pro.annee_debut.strftime("%Y") %></p>
-          <p class="mb-0"><%= experience_pro.annee_fin.strftime("%Y") %></p>
-        </div>
-        <div class="d-flex flex-column">
-          <p class="mb-0 fs-5"><%= experience_pro.emploi %> - <%= experience_pro.organisation %>, <%= experience_pro.ville %></p>
-          <p class="mb-0"><%= experience_pro.detail %></p>
-        </div>
-      </li>
-    <% end %>
-  </ul>
+  <div class="big-card pb-2">
+    <div data-controller="toggle" class="mt-5">
+      <h2 data-action="click->toggle#toggle" class="top-card fw-bold py-2 mt-4">Formations <i class="fa-solid fa-chevron-down"></i></h2>
+      <ul data-toggle-target="togglableElement" class="togglable-list d-flex flex-column gap-5 mt-4 ps-2">
+        <% @formations.each do |formation| %>
+          <li class="d-flex gap-2 align-items-center">
+            <div class="d-flex flex-column background-green px-2">
+              <p class="mb-0"><%= formation.annee_debut.strftime("%Y") %></p>
+              <p class="mb-0"><%= formation.annee_fin.strftime("%Y") %></p>
+            </div>
+            <p class="content-card mb-0 fs-5"><%= formation.emploi %> - <%= formation.ville %></p>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 
-  <h2 class="fw-bold mt-4">Stages</h2>
-  <ul class="d-flex flex-column gap-5 mt-3 ps-2">
-    <% @stages.each do |stage| %>
-      <li class="d-flex gap-2 align-items-center">
-        <div class="d-flex flex-column background-green px-2">
-          <p class="mb-0"><%= stage.annee_debut.strftime("%Y") %></p>
-          <p class="mb-0"><%= stage.annee_fin.strftime("%Y") %></p>
-        </div>
-        <p class="mb-0 fs-5"><%= stage.emploi %> <%= stage.organisation %>- <%= stage.ville %></p>
-      </li>
-    <% end %>
-  </ul>
+  <div class="big-card pb-2">
+    <div data-controller="toggle" class="mt-5">
+      <h2 data-action="click->toggle#toggle" class="top-card fw-bold py-2 mt-4">Professionelles <i class="fa-solid fa-chevron-down"></i></h2>
+      <ul data-toggle-target="togglableElement" class="togglable-list d-flex flex-column gap-5 mt-3 ps-2">
+        <% @experiences_pro.each do |experience_pro| %>
+          <li class="d-flex gap-2 align-items-center">
+            <div class="d-flex flex-column background-green px-2">
+              <p class="mb-0"><%= experience_pro.annee_debut.strftime("%Y") %></p>
+              <p class="mb-0"><%= experience_pro.annee_fin.strftime("%Y") %></p>
+            </div>
+            <div class="d-flex flex-column content-card">
+              <p class="mb-0 fs-5"><%= experience_pro.emploi %> - <%= experience_pro.organisation %>, <%= experience_pro.ville %></p>
+              <p class="mb-0"><%= experience_pro.detail %></p>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="big-card pb-2">
+    <div data-controller="toggle" class="mt-5">
+      <h2 data-action="click->toggle#toggle" class="top-card fw-bold py-2 mt-4">Stages <i class="fa-solid fa-chevron-down"></i></h2>
+      <ul data-toggle-target="togglableElement" class="togglable-list d-flex flex-column gap-5 mt-3 ps-2">
+        <% @stages.each do |stage| %>
+          <li class="d-flex gap-2 align-items-center">
+            <div class="d-flex flex-column background-green px-2">
+              <p class="mb-0"><%= stage.annee_debut.strftime("%Y") %></p>
+              <p class="mb-0"><%= stage.annee_fin.strftime("%Y") %></p>
+            </div>
+            <p class="content-card mb-0 fs-5"><%= stage.emploi %> <%= stage.organisation %>- <%= stage.ville %></p>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+
 
   <h1 class='mt-5'>Compétences</h1>
   <ul class='d-flex justify-content-evenly align-items-end row row-cols-2 ps-0 mt-3'>
