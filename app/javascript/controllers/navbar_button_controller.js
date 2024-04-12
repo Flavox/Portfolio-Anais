@@ -5,7 +5,7 @@ export default class extends Controller {
   static targets = [ "menuIcon", "button" ];
 
   animate() {
-      this.menuIconTarget.classList.toggle('open');
-      this.buttonTarget.classList.toggle('move-left');
+    this.menuIconTarget.classList.toggle('open');
+    this.buttonTarget.classList.toggle('move-left');
   }
 }

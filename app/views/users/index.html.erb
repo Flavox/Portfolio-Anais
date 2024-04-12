@@ -6,7 +6,7 @@
   <% @realisations.each do |realisation| %>
     <li class="mb-3 text-info">
       (<%= realisation.categorie %>)
-      <%= realisation.titre %> <%= realisation.date.strftime("%Y") %>
+      <%= realisation.titre %> <%= realisation.date.strftime("%Y") if realisation.date.present? %>
       <%= realisation.description %>
       <div class="d-flex justify-content-evenly">
         <%= link_to "Modifier 🎨", edit_realisation_path(realisation) %>
